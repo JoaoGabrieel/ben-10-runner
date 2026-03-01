@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbicix6oj1w8f"]
+
+[ext_resource type="Script" uid="uid://cwchs8iwwtbup" path="res://scenes/fogo.gd" id="1_ep6ww"]
+[ext_resource type="Texture2D" uid="uid://cbukc04f58f6a" path="res://assets/img/Bola de Fogo.png" id="1_ribnb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ribnb"]
+atlas = ExtResource("1_ribnb")
+region = Rect2(0, 0, 60, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ep6ww"]
+atlas = ExtResource("1_ribnb")
+region = Rect2(60, 0, 60, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2bice"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ribnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ep6ww")
+}],
+"loop": true,
+"name": &"bola_de_fogo",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep6ww"]
+size = Vector2(147, 77)
+
+[node name="Fogo" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_ep6ww")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_2bice")
+animation = &"bola_de_fogo"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(64.5, 9.5)
+shape = SubResource("RectangleShape2D_ep6ww")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

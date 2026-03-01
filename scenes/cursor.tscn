@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://pfyt1ed7y2fy"]
+
+[ext_resource type="Texture2D" uid="uid://pgbsuvxde735" path="res://assets/img/omnitrix_cursor1-sheet.png" id="1_1eco6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1eco6"]
+atlas = ExtResource("1_1eco6")
+region = Rect2(45, 0, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0nli"]
+atlas = ExtResource("1_1eco6")
+region = Rect2(0, 0, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndevg"]
+atlas = ExtResource("1_1eco6")
+region = Rect2(90, 0, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5qf0"]
+atlas = ExtResource("1_1eco6")
+region = Rect2(135, 0, 45, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pey64"]
+atlas = ExtResource("1_1eco6")
+region = Rect2(180, 0, 45, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s0nli"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1eco6")
+}],
+"loop": true,
+"name": &"chama_cursor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0nli")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndevg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5qf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pey64")
+}],
+"loop": true,
+"name": &"xlr8_cursor",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+sprite_frames = SubResource("SpriteFrames_s0nli")

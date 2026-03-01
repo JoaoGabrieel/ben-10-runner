@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6egbkwnpc4ti"]
+
+[ext_resource type="Texture2D" uid="uid://duiypq21cybty" path="res://background/rosa.webp" id="1_6nb2i"]
+[ext_resource type="Texture2D" uid="uid://c4r6phyjk1jy0" path="res://background/montanhas (1).png" id="2_88yak"]
+
+[node name="Bg" type="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-16, 1)
+texture = ExtResource("1_6nb2i")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(-579, -309)
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(800, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(541, 328)
+scale = Vector2(1.67, 3.82143)
+texture = ExtResource("2_88yak")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(-579, -309)
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(800, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(541, 328)
+scale = Vector2(1.67, 3.82143)
+texture = ExtResource("2_88yak")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+position = Vector2(-579, -309)
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(800, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(541, 328)
+scale = Vector2(1.67, 3.82143)
+texture = ExtResource("2_88yak")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+position = Vector2(-579, -309)
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(800, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
+position = Vector2(541, 328)
+scale = Vector2(1.67, 3.82143)
+texture = ExtResource("2_88yak")
+centered = false

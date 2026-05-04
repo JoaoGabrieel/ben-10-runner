@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3cgsw0ucb1vr"]
+
+[ext_resource type="Texture2D" uid="uid://cgqkbdh3lgehe" path="res://assets/img/Rock2.png" id="1_qs86r"]
+[ext_resource type="PackedScene" uid="uid://bwu0kpsg4knvn" path="res://scenes/hit_area/hit_area.tscn" id="2_qs86r"]
+
+[node name="Stump" type="StaticBody2D" groups=["obstacles"]]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(32, 53)
+scale = Vector2(5, 5)
+texture = ExtResource("1_qs86r")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+scale = Vector2(5, 5)
+polygon = PackedVector2Array(0.5, -3.25, -4.5, -8, -9.5, -9.5, -14.25, -8.75, -18, -4.5, -18.25, 0.75, -20.5, 1.75, -21.75, 4.25, -21.25, 12.25, 15.75, 12.25, 15.25, 8.75, 12.25, 5, 8, 3, 5.5, 2.5, 5.5, -3)
+
+[node name="HitArea" parent="." instance=ExtResource("2_qs86r")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitArea"]
+visible = false
+scale = Vector2(5, 5)
+polygon = PackedVector2Array(0.2, -5.4, -5.4, -10.8, -10.8, -11, -15.2, -9.2, -19.2, -5.2, -19.8, -0.8, -21.6, 0.4, -23.8, 4.4, -22.4, 12.6, 17.6, 12.6, 16.8, 7.8, 13.6, 3.4, 8, 1.6, 7, 0.8, 6.6, -4.8)

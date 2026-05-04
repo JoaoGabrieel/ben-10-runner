@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ctvt1qwm0ivvc"]
+
+[ext_resource type="Script" uid="uid://dbuh8h2b0fxak" path="res://scenes/main.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b6wvkf5cero72" path="res://scenes/bg.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://d4dxyf1r1cfon" path="res://scenes/ground.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b3kn5ilkm56gj" path="res://scenes/ben_10.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cuibwkio6l1rj" path="res://scenes/hud.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dj2ejpommm0tf" path="res://scenes/game_over.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://d2by72gsrn4gs" path="res://scenes/pause.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bfxdawbsxv0cl" path="res://omnitrix_discharge.tscn" id="8_tipki"]
+
+[node name="main" type="Node" unique_id=2113926361 groups=["main"]]
+script = ExtResource("1_jyhfs")
+
+[node name="Bg" parent="." unique_id=47284927 instance=ExtResource("1_sugp2")]
+
+[node name="Ben10" parent="." unique_id=322618203 instance=ExtResource("3_tbgi4")]
+position = Vector2(154, 421)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1612518231]
+position = Vector2(576, 489)
+scale = Vector2(5, 5)
+zoom = Vector2(0.96, 0.79)
+
+[node name="HUD" parent="." unique_id=332323782 instance=ExtResource("5_tbgi4")]
+
+[node name="GameOver" parent="." unique_id=2072112617 instance=ExtResource("6_tefeu")]
+process_mode = 2
+
+[node name="Pause" parent="." unique_id=764636578 instance=ExtResource("7_o6xl0")]
+
+[node name="Omnitrix_hud" parent="." unique_id=1738780157 instance=ExtResource("8_tipki")]
+
+[node name="ambiente" type="Node2D" parent="." unique_id=1639058439]
+
+[node name="Ground2" parent="ambiente" unique_id=1887597702 instance=ExtResource("2_jyhfs")]
+position = Vector2(-40, -12)
+collision_layer = 5

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj2ejpommm0tf"]
+
+[ext_resource type="FontFile" uid="uid://cpdkd2lvyoxld" path="res://fonts/Retro Gaming.ttf" id="1_xeevv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqhvx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbwuq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_racf3"]
+
+[node name="GameOver" type="CanvasLayer"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 451.0
+offset_top = 296.5
+offset_right = 701.0
+offset_bottom = 351.5
+theme_override_fonts/font = ExtResource("1_xeevv")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_wqhvx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tbwuq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_racf3")
+text = "RESTART"

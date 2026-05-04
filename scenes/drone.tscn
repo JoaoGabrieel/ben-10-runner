@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://mhaxen3uqqdp"]
+
+[ext_resource type="Script" uid="uid://x1iw5q1hadsx" path="res://scenes/drone.gd" id="1_1r4ts"]
+[ext_resource type="Texture2D" uid="uid://b784d31cf7faw" path="res://assets/img/vilgax drone.png" id="1_dil0n"]
+[ext_resource type="PackedScene" uid="uid://bwu0kpsg4knvn" path="res://scenes/hit_area/hit_area.tscn" id="3_1r4ts"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knnud"]
+atlas = ExtResource("1_dil0n")
+region = Rect2(0, 0, 54, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1r4ts"]
+atlas = ExtResource("1_dil0n")
+region = Rect2(54, 0, 54, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umx5g"]
+atlas = ExtResource("1_dil0n")
+region = Rect2(108, 0, 54, 84)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1p8w"]
+atlas = ExtResource("1_dil0n")
+region = Rect2(177, 0, 59, 84)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6asb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knnud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1r4ts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umx5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1p8w")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umx5g"]
+size = Vector2(44, 31.75)
+
+[node name="Drone" type="StaticBody2D" groups=["obstacles"]]
+texture_filter = 1
+scale = Vector2(4, 4)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_1r4ts")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f6asb")
+animation = &"flying"
+frame_progress = 0.915244
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1.25, -4.25)
+scale = Vector2(4, 4)
+polygon = PackedVector2Array(1.70833, -0.0833333, 0.666667, -0.75, -1.625, 0, -1.66667, 1.125, -3.16667, 1.875, -4, 2.91667, -2.54167, 4.20833, -3.54167, 4.83333, -3.75, 7.16667, -1.04167, 6.79167, 1.91667, 6.95833, 4.16667, 7.29167, 4, 4.875, 4.95833, 3.66667, 4.58333, 2.375, 3.25, 2.16667, 2.25, 0.708333, 2.83333, 0.875)
+
+[node name="HitArea" parent="." instance=ExtResource("3_1r4ts")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
+position = Vector2(3, 8.875)
+shape = SubResource("RectangleShape2D_umx5g")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitArea"]
+position = Vector2(1.25, -4.25)
+scale = Vector2(4, 4)
+polygon = PackedVector2Array(1.70833, -0.0833333, 0.666667, -0.75, -1.625, 0, -1.66667, 1.125, -3.16667, 1.875, -4.3125, 2.875, -2.54167, 4.20833, -3.54167, 4.83333, -3.75, 7.16667, -1.04167, 6.79167, 1.91667, 6.95833, 4.16667, 7.29167, 4, 4.875, 6.0625, 4.125, 5.0625, 2.125, 3.25, 2.16667, 2.25, 0.708333, 2.83333, 0.875)

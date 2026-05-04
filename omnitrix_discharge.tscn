@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfxdawbsxv0cl"]
+
+[ext_resource type="Script" uid="uid://d1flkfkow54cx" path="res://omnitrix_discharge.gd" id="1_4nrhs"]
+[ext_resource type="Texture2D" uid="uid://6genrun4vlb5" path="res://assets/img/omnitrix_discharge.png" id="1_mxn4w"]
+[ext_resource type="Texture2D" uid="uid://bgrt4yp3hd3yd" path="res://assets/img/omnitrix_logo_solo.png" id="2_ctqul"]
+[ext_resource type="SpriteFrames" uid="uid://bnn7f337o64fs" path="res://assets/img/omnitrix_fremes.tres" id="3_ctqul"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_4nrhs")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Ready" type="Sprite2D" parent="Control"]
+texture_filter = 1
+position = Vector2(1124, 120.207504)
+scale = Vector2(4, 4.039)
+texture = ExtResource("2_ctqul")
+
+[node name="discharge" type="AnimatedSprite2D" parent="Control"]
+texture_filter = 1
+position = Vector2(992.0801, 112)
+scale = Vector2(4, 4.022)
+sprite_frames = ExtResource("3_ctqul")
+frame = 10
+frame_progress = 0.24465686
+
+[node name="locked" type="TextureRect" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 15.025001
+anchor_top = 0.725
+anchor_right = 18.367
+anchor_bottom = 4.0670004
+offset_left = 309.08008
+offset_top = 2.0
+offset_right = 216.40002
+offset_bottom = -90.68002
+scale = Vector2(4, 4)
+texture = ExtResource("1_mxn4w")

@@ -8,14 +8,18 @@
 
 config_version=5
 
+<<<<<<< HEAD
 [animation]
 
 compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
+=======
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 [application]
 
 config/name="BEN 10 RUNNER"
 run/main_scene="uid://ctvt1qwm0ivvc"
+<<<<<<< HEAD
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,6 +27,11 @@ config/icon="res://icon.svg"
 
 project/assembly_name="BEN 10 RUNNER"
 
+=======
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://icon.svg"
+
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 [global_group]
 
 obstacles=""

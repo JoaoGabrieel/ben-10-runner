@@ -7,9 +7,12 @@ enum OmnitrixState{
 	ACTIVE
 }
 
+<<<<<<< HEAD
 
 
 var is_slow_mo: bool = false
+=======
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 var omnitrix_state: OmnitrixState = OmnitrixState.LOCKED
 
 var stump_scene= preload("res://scenes/stump.tscn")
@@ -17,10 +20,16 @@ var drone_scene= preload("res://scenes/drone.tscn")
 var obstacle_type := [stump_scene]
 var osbtacle : Array
 var drone_heights:= [200,300]
+<<<<<<< HEAD
 @onready var ambiente = $ambiente
 @onready var current_player: CharacterBody2D = $Ben10
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var ground: StaticBody2D = $ambiente/Ground2
+=======
+@onready var current_player: CharacterBody2D = $Ben10
+@onready var camera_2d: Camera2D = $Camera2D
+@onready var ground: StaticBody2D = $Ground2
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 @onready var game_over_hud: CanvasLayer = $GameOver
 @onready var omnitrix_hud := $Omnitrix_hud
 
@@ -49,8 +58,12 @@ const XLR8_DIST_MULTIPLIER = 6.0
 const BEN_SCRIPT = preload("res://scenes/ben_10.gd")
 const BASE_GAP = 800
 const GAP_RANDOM = 500
+<<<<<<< HEAD
 const SLOW_MO_WORLD_SPEED = 7.0  
 var next_spawn_dist = 0.0  
+=======
+var next_spawn_dist = 0.0
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 
 var screem_size : Vector2i
 var ground_height : int
@@ -91,6 +104,7 @@ func _on_resume_pressed():
 # Called when the node enters the scene tree for the fir  st time.
 func _ready() -> void:	
 	set_process_unhandled_input(true)  
+<<<<<<< HEAD
 	screem_size = get_window().size
 	
 	# Verificações de segurança e conexões (APENAS UMA VEZ CADA)
@@ -106,6 +120,15 @@ func _ready() -> void:
 			$Pause/Resume.pressed.connect(_on_resume_pressed)
 
 	# Conexões do Player
+=======
+	ground_height = ground   .get_node("Sprite2D").texture.get_height()
+	screem_size = get_window().size
+	game_over_hud.get_node("Button").pressed.connect(new_game)
+	$Pause.get_node("Resume").pressed.connect(_on_resume_pressed)
+
+
+
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 	if current_player is Ben10:
 		var ben = current_player as Ben10
 		if not ben.transformed.is_connected(_on_player_transformed):
@@ -125,6 +148,16 @@ func _on_transformation_finished():
 	
 	score_at_last_recharge = score
 	
+<<<<<<< HEAD
+=======
+	#await get_tree().create_timer(1.5).timeout
+	#omnitrix_state = OmnitrixState.READY
+	#omnitrix_hud.show_ready()
+
+
+	
+
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 	
 func _on_ben_requested_transform():
 	print("main recebeu o pedido de transformaçao")
@@ -147,6 +180,21 @@ func execute_transformation():
 	
 	var ben := current_player as Ben10
 	ben.transform_player()
+<<<<<<< HEAD
+=======
+	
+		
+	
+	
+
+
+
+	
+#func _on_was_hero_time():
+	#omnitrix_hud.show_ready()	
+	
+
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 
 
 	
@@ -163,6 +211,7 @@ func _on_player_transformed(hero: String ):
 		if hero == "ben":
 				omnitrix_hud.show_locked()
 
+<<<<<<< HEAD
 	  
 func new_game():
 	get_tree().paused = false  
@@ -170,6 +219,16 @@ func new_game():
 	camera_2d.position = CAM_START_POS
 	current_player.velocity = Vector2.ZERO
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+=======
+			
+
+	
+	  
+func new_game():
+	current_player.position = BEN_START_POS
+	camera_2d.position = CAM_START_POS
+	current_player.velocity = Vector2.ZERO
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 	
 	next_spawn_dist = camera_2d.position.x + 700
 	
@@ -228,6 +287,7 @@ func new_game():
 	
 
 func _process(_delta):
+<<<<<<< HEAD
 
 	if is_slow_mo:
 		ambiente.modulate = ambiente.modulate.lerp(Color(0.2, 0.2, 0.2), 10 * _delta)
@@ -241,18 +301,32 @@ func _process(_delta):
 				speed = SLOW_MO_WORLD_SPEED
 			else:			
 				speed = lerp(speed, xlr8_speed_boost, 0.5 * _delta)
+=======
+	if game_running: 
+		if is_xlr8_mode:
+			speed = lerp(speed,xlr8_speed_boost,0.5 * _delta)
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 		else:
 			speed = START_SPEED + score / SPEED_MODIFIER
 			if speed > MAX_SPEED: 
 				speed = MAX_SPEED
 				
+<<<<<<< HEAD
 		adjust_difficulty()
 		generate_obs()
+=======
+		
+
+		adjust_difficulty()
+		generate_obs() 
+
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 		current_player.position.x += speed
 		camera_2d.position.x += speed
 		score += speed
 		show_score()
 		
+<<<<<<< HEAD
 
 		
 		# Reciclagem do Chão
@@ -262,10 +336,23 @@ func _process(_delta):
 			ambiente.add_child(new_ground)
 			ground_segments.append(new_ground)
 			
+=======
+		
+
+		#arrumar o ground criar um novo ao inves de mover d
+		if camera_2d.position.x - ground_segments[-1].position.x > screem_size.x / 2:
+			var new_ground = ground.duplicate()  
+			new_ground.position = ground_segments[-1].position + Vector2(screem_size.x,0)
+			add_child(new_ground)
+			ground_segments.append(new_ground)
+			
+			
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 		if ground_segments[0].position.x < (camera_2d.position.x - screem_size.x * 1.5):
 			var old_ground = ground_segments.pop_front()
 			old_ground.queue_free() 
 
+<<<<<<< HEAD
 		# Remoção de Obstáculos
 		for obs in osbtacle:
 			if is_instance_valid(obs) and obs.position.x < (camera_2d.position.x - screem_size.x):
@@ -282,11 +369,44 @@ func _process(_delta):
 				omnitrix_hud.show_ready()
 	
 	#  Lógica de Início (Quando não está rodando)
+=======
+		for obs in osbtacle:
+			if obs.position.x < (camera_2d.position.x - screem_size.x):
+				remove_obs(obs)
+
+
+	if game_running and omnitrix_state == OmnitrixState.LOCKED:
+		var progress = (score - score_at_last_recharge) / SCORE_MODIFIER
+		var goal = 500 * score_multiplier
+		
+		if progress >= goal:
+			print("Meta Batida! Omnitrix pronto.")
+			omnitrix_state = OmnitrixState.READY
+			omnitrix_hud.show_ready()
+			
+		if omnitrix_state == OmnitrixState.LOCKED and game_running:
+			print("Progresso: ", int(progress), " / Meta: ", goal)
+			
+		
+			
+			
+	
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 	else:
 		if Input.is_action_just_pressed("ui_accept") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			print("Jogo Iniciado!")
 			game_running = true
 			$HUD.get_node("StartLabel").hide()
+<<<<<<< HEAD
+=======
+			
+	
+			
+		
+	
+	
+
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 
 
 		
@@ -300,19 +420,31 @@ func generate_obs():
 			obs = drone_scene.instantiate()
 			var drone_y = drone_heights[randi() % drone_heights.size()]
 			obs.position = Vector2(camera_2d.position.x + screem_size.x + 100, drone_y)
+<<<<<<< HEAD
 			ambiente.add_child(obs) # Adiciona o drone à cena
+=======
+			add_child(obs) # Adiciona o drone à cena
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 			osbtacle.append(obs)
 		else:
 			obs = stump_scene.instantiate()
 			obs.position = Vector2(camera_2d.position.x + screem_size.x + 100, BEN_START_POS.y - 10) 
+<<<<<<< HEAD
 			ambiente.add_child(obs)
+=======
+			add_child(obs)
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 			osbtacle.append(obs)
 			
 			var group_chance = 0.5 if is_xlr8_mode else 0.3
 			if randf() < group_chance:
 				var obs2 = stump_scene.instantiate()
 				obs2.position = Vector2(obs.position.x + 60, obs.position.y)
+<<<<<<< HEAD
 				ambiente.add_child(obs2)
+=======
+				add_child(obs2)
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 				osbtacle.append(obs2)
 				obs = obs2 # O gap agora conta a partir do segundo toco
 				
@@ -335,7 +467,11 @@ func generate_obs():
 	
 func add_obs(obs: StaticBody2D, x: int, y: int):
 	obs.position = Vector2i(x,y)  
+<<<<<<< HEAD
 	ambiente.add_child(obs)
+=======
+	add_child(obs)
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 	osbtacle.append(obs)
 	
 	
@@ -361,10 +497,16 @@ func adjust_difficulty():
 
 func game_over():
 	check_high_score()
+<<<<<<< HEAD
 	get_tree().paused = true 
 	game_running = false
 	game_over_hud.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) 
+=======
+	get_tree().paused = true
+	game_running = false
+	game_over_hud.show()
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 
 
 func _on_pause_property_list_changed() -> void:

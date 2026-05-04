@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene format=3 uid="uid://pfyt1ed7y2fy"]
+=======
+[gd_scene load_steps=8 format=3 uid="uid://pfyt1ed7y2fy"]
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 
 [ext_resource type="Texture2D" uid="uid://pgbsuvxde735" path="res://assets/img/omnitrix_cursor1-sheet.png" id="1_1eco6"]
 
@@ -55,6 +59,7 @@ animations = [{
 "speed": 5.0
 }]
 
+<<<<<<< HEAD
 [node name="Area2D" type="Area2D" unique_id=73897791]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=448724677]
@@ -65,3 +70,11 @@ sprite_frames = SubResource("SpriteFrames_s0nli")
 animation = &"xlr8_cursor"
 frame = 1
 frame_progress = 0.59767
+=======
+[node name="Area2D" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+sprite_frames = SubResource("SpriteFrames_s0nli")
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f

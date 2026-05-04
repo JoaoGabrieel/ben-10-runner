@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene format=3 uid="uid://b3kn5ilkm56gj"]
+=======
+[gd_scene load_steps=72 format=3 uid="uid://b3kn5ilkm56gj"]
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 
 [ext_resource type="Script" uid="uid://ilun0cdcji6o" path="res://scenes/ben_10.gd" id="1_maew6"]
 [ext_resource type="Texture2D" uid="uid://c3mc6vp68u4yp" path="res://assets/img/chama_run.png" id="2_0s72d"]
@@ -12,9 +16,13 @@
 [ext_resource type="Texture2D" uid="uid://vhcblxl3yhtu" path="res://assets/img/xlr8_idle.png" id="7_bmhhl"]
 [ext_resource type="Texture2D" uid="uid://dymvgoj8bxyh1" path="res://assets/img/four-arms_run.png" id="7_xc30f"]
 [ext_resource type="Texture2D" uid="uid://k7g06sfuhyar" path="res://assets/img/xlr8_slide.png" id="8_71mla"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://cqh2vnfvlw13x" path="res://assets/img/four-arms_punch.png" id="8_xc30f"]
 [ext_resource type="Texture2D" uid="uid://dmh7xbsdcjbq6" path="res://assets/img/xlr8_run.png" id="9_3v0fw"]
 [ext_resource type="Texture2D" uid="uid://b33spou8wer7s" path="res://assets/img/four_arms_run2.png" id="9_xirdi"]
+=======
+[ext_resource type="Texture2D" uid="uid://dmh7xbsdcjbq6" path="res://assets/img/xlr8_run.png" id="9_3v0fw"]
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oqap4"]
 atlas = ExtResource("2_0s72d")
@@ -113,6 +121,7 @@ atlas = ExtResource("7_xc30f")
 region = Rect2(282, 0, 47, 47)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rnns7"]
+<<<<<<< HEAD
 atlas = ExtResource("8_xc30f")
 region = Rect2(0, 0, 50, 50)
 
@@ -159,6 +168,34 @@ region = Rect2(300, 0, 50, 50)
 [sub_resource type="AtlasTexture" id="AtlasTexture_tb5vc"]
 atlas = ExtResource("9_xirdi")
 region = Rect2(350, 0, 50, 50)
+=======
+atlas = ExtResource("7_xc30f")
+region = Rect2(329, 0, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_830jh"]
+atlas = ExtResource("7_xc30f")
+region = Rect2(0, 0, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjri7"]
+atlas = ExtResource("7_xc30f")
+region = Rect2(47, 0, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_il5yl"]
+atlas = ExtResource("7_xc30f")
+region = Rect2(94, 0, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3apqo"]
+atlas = ExtResource("7_xc30f")
+region = Rect2(141, 0, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0smx"]
+atlas = ExtResource("7_xc30f")
+region = Rect2(188, 0, 47, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oebm"]
+atlas = ExtResource("7_xc30f")
+region = Rect2(235, 0, 47, 47)
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bmhhl"]
 atlas = ExtResource("4_jlm36")
@@ -363,7 +400,16 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rnns7")
+<<<<<<< HEAD
 }, {
+=======
+}],
+"loop": true,
+"name": &"four arms_punch",
+"speed": 5.0
+}, {
+"frames": [{
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_830jh")
 }, {
@@ -372,12 +418,16 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_il5yl")
+<<<<<<< HEAD
 }],
 "loop": true,
 "name": &"four arms_punch",
 "speed": 8.0
 }, {
 "frames": [{
+=======
+}, {
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3apqo")
 }, {
@@ -386,6 +436,7 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0oebm")
+<<<<<<< HEAD
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7jbq7")
@@ -405,6 +456,12 @@ animations = [{
 "loop": true,
 "name": &"four arms_run",
 "speed": 13.0
+=======
+}],
+"loop": true,
+"name": &"four arms_run",
+"speed": 10.0
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 }, {
 "frames": [{
 "duration": 1.0,
@@ -515,13 +572,18 @@ size = Vector2(8, 26)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4n5x7"]
 size = Vector2(25, 18)
 
+<<<<<<< HEAD
 [node name="Ben10" type="CharacterBody2D" unique_id=1288424213 groups=["player"]]
+=======
+[node name="Ben10" type="CharacterBody2D" groups=["player"]]
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 z_index = 1
 scale = Vector2(8, 8)
 collision_mask = 6
 script = ExtResource("1_maew6")
 heroes = Array[String](["Chama", "Xlr8", "Quatro Braços"])
 
+<<<<<<< HEAD
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2053810485]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_3v0fw")
@@ -530,20 +592,42 @@ autoplay = "idle"
 frame_progress = 0.25404632
 
 [node name="RunCol" type="CollisionShape2D" parent="." unique_id=726936272]
+=======
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_3v0fw")
+animation = &"xlr8_run"
+autoplay = "idle"
+frame_progress = 0.439256
+
+[node name="RunCol" type="CollisionShape2D" parent="."]
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 visible = false
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_oqap4")
 
+<<<<<<< HEAD
 [node name="DuckCol" type="CollisionShape2D" parent="." unique_id=384146590]
+=======
+[node name="DuckCol" type="CollisionShape2D" parent="."]
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 visible = false
 position = Vector2(-1, 7)
 shape = SubResource("RectangleShape2D_4n5x7")
 
+<<<<<<< HEAD
 [node name="JunpSound" type="AudioStreamPlayer2D" parent="." unique_id=302172430]
 stream = ExtResource("2_1pvxq")
 volume_db = -25.0
 
 [node name="Timer" type="Timer" parent="." unique_id=109717014]
+=======
+[node name="JunpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_1pvxq")
+volume_db = -25.0
+
+[node name="Timer" type="Timer" parent="."]
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 wait_time = 5.0
 one_shot = true
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_resource type="SpriteFrames" format=3 uid="uid://bnn7f337o64fs"]
+=======
+[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://bnn7f337o64fs"]
+>>>>>>> 1e280b682aed68ab95ef9dea6c208ac7e95ee94f
 
 [ext_resource type="Texture2D" uid="uid://dprac27ecbl8k" path="res://assets/img/omnitrix_logo.png" id="1_van3n"]
 
